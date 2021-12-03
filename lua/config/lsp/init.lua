@@ -9,8 +9,9 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local custom_attach = function(_, bufnr)
   local opts = {noremap = true, silent = true}
 
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.home()<CR>', opts)
-
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>co', '<cmd>lua vim.lsp.buf.outgoing_calls()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ci', '<cmd>lua vim.lsp.buf.incoming_calls()<CR>', opts)
 end
 
 local sumneko_root_path = vim.fn.expand('$HOME/github/lua-language-server')
@@ -46,7 +47,7 @@ nvim_lsp.gopls.setup {
   on_attach = custom_attach,
   capabilities = capabilities,
   filetypes = {'go', 'gomod'},
-  cmd = {'gopls'},
+  cmd = {'gopls', '-remote.debug=:0'},
   settings = {
     gopls = {
       staticcheck = true,

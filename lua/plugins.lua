@@ -1,3 +1,4 @@
+-- vim: ts=2 sw=2 et:
 
 local function install_packer()
   -- local fn = vim.fn
@@ -20,7 +21,10 @@ packer.init {
 packer.startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
-	use {'projekt0n/github-nvim-theme'}
+  use {
+    'ellisonleao/gruvbox.nvim',
+    requires = {'rktjmp/lush.nvim'},
+  }
 
   use {
     'neovim/nvim-lspconfig',
@@ -36,11 +40,18 @@ packer.startup(function()
     end
   }
 
+  use {'L3MON4D3/LuaSnip'}
+
+  use {'rafamadriz/friendly-snippets'}
+
   use {
     'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
+      -- 'hrsh7th/cmp-vsnip',
+      -- 'hrsh7th/vim-vsnip',
+      'saadparwaiz1/cmp_luasnip',
     },
     config = function()
       require('config.nvim-cmp')
