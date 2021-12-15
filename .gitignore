@@ -1,4 +1,4 @@
 temp/
-test.*
+test*.*
 # packer.nvim
 plugin/packer_compiled.lua
