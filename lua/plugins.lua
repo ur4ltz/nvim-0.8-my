@@ -99,6 +99,13 @@ packer.startup(function()
   }
 
   use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('config.gitsigns')
+    end,
+  }
+
+  use {
     'rmagatti/auto-session',
     config = function()
       require('config.auto-session')
