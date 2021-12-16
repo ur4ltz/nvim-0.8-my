@@ -46,6 +46,12 @@ packer.startup(function()
   }
 
   use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('config.indent-blankline')
+    end,
+  }
+
   use {'ray-x/lsp_signature.nvim'}
 
   use {
