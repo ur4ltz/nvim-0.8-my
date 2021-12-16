@@ -129,6 +129,13 @@ packer.startup(function()
   }
 
   use {
+    'akinsho/toggleterm.nvim',
+    config = function()
+      require('config.toggleterm')
+    end,
+  }
+
+  use {
     'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/popup.nvim',
