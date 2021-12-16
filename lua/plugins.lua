@@ -15,7 +15,14 @@ install_packer()
 local packer = require('packer')
 
 packer.init {
-  max_job = 2,
+  auto_clean = true,
+  max_jobs = 2,
+  display = {
+    open_cmd = 'topleft 80vnew [packer]',
+  },
+  git = {
+    clone_timeout = 360,
+  },
 }
 
 packer.startup(function()
