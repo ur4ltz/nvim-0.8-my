@@ -33,9 +33,18 @@ packer.startup(function()
     requires = {'rktjmp/lush.nvim'},
   }
 
+  use {'kyazdani42/nvim-web-devicons'}
+
   use {'onsails/lspkind-nvim'}
 
   use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {'nvim-web-devicons'},
+    config = function()
+      require('config.tree')
+    end,
+  }
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
