@@ -1,0 +1,8 @@
+{
+	"vim.api.nvim_": {
+		"prefix": "nv",
+		"body": [
+			"vim.api.nvim_"
+		]
+	}
+}
