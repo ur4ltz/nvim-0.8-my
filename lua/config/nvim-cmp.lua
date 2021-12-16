@@ -9,8 +9,9 @@ end
 --   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 -- end
 
+local cmp     = require('cmp')
+local lspkind = require('lspkind')
 local luasnip = require('luasnip')
-local cmp = require('cmp')
 
 cmp.setup {
   snippet = {
@@ -53,11 +54,22 @@ cmp.setup {
   },
   sources = {
     {name = 'nvim_lsp'},
+    {name = 'nvim_lua'},
     {name = 'luasnip'},
     {name = 'buffer'},
+    {name = 'path'},
   },
   documentation = {
     border = 'rounded',
+  },
+  formatting = {
+    format = lspkind.cmp_format({with_text = true, menu = ({
+      nvim_lsp = '[Lsp]',
+      nvim_lua = '[Lua]',
+      luasnip  = '[Snippet]',
+      buffer   = '[Buffer]',
+      path     = '[Path]',
+    })}),
   },
 }
 

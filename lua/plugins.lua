@@ -33,6 +33,9 @@ packer.startup(function()
     requires = {'rktjmp/lush.nvim'},
   }
 
+  use {'onsails/lspkind-nvim'}
+
+  use {
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -77,13 +80,15 @@ packer.startup(function()
 
   use {'L3MON4D3/LuaSnip'}
 
-  use {'rafamadriz/friendly-snippets'}
+  -- use {'rafamadriz/friendly-snippets'}
 
   use {
     'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lua',
       'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
       -- 'hrsh7th/cmp-vsnip',
       -- 'hrsh7th/vim-vsnip',
       'saadparwaiz1/cmp_luasnip',
