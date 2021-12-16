@@ -99,6 +99,20 @@ packer.startup(function()
   }
 
   use {
+    'rmagatti/auto-session',
+    config = function()
+      require('config.auto-session')
+    end,
+  }
+
+  use {
+    'rmagatti/session-lens',
+    config = function()
+      require('session-lens').setup()
+    end,
+  }
+
+  use {
     'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/popup.nvim',
