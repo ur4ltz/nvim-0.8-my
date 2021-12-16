@@ -33,6 +33,19 @@ packer.startup(function()
     requires = {'rktjmp/lush.nvim'},
   }
 
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    requires = {
+      'nvim-treesitter/playground',
+      'p00f/nvim-ts-rainbow',
+    },
+    config = function()
+      require('config.treesitter')
+    end,
+  }
+
+  use {
   use {'ray-x/lsp_signature.nvim'}
 
   use {
