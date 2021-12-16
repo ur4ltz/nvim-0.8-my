@@ -33,10 +33,19 @@ packer.startup(function()
     requires = {'rktjmp/lush.nvim'},
   }
 
+  use {'ray-x/lsp_signature.nvim'}
+
   use {
     'neovim/nvim-lspconfig',
     config = function()
       require('config.lsp')
+    end,
+  }
+
+  use {
+    'stevearc/aerial.nvim',
+    config = function()
+      require('config.aerial')
     end,
   }
 
