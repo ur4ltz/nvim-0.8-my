@@ -116,6 +116,12 @@ packer.startup(function()
   }
 
   use {
+    'rafcamlet/nvim-luapad',
+    ft = 'lua',
+    config = function()
+      require('config.luapad')
+    end,
+  }
     'lewis6991/gitsigns.nvim',
     config = function()
       require('config.gitsigns')
