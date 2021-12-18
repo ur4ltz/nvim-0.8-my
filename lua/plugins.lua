@@ -122,6 +122,7 @@ packer.startup(function()
       require('config.luapad')
     end,
   }
+
   use {
     'SmiteshP/nvim-gps',
     config = function()
@@ -129,6 +130,7 @@ packer.startup(function()
     end,
   }
 
+  use {
     'lewis6991/gitsigns.nvim',
     config = function()
       require('config.gitsigns')
