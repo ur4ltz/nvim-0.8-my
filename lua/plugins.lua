@@ -122,9 +122,24 @@ packer.startup(function()
       require('config.luapad')
     end,
   }
+  use {
+    'SmiteshP/nvim-gps',
+    config = function()
+      require('config.nvim-gps')
+    end,
+  }
+
     'lewis6991/gitsigns.nvim',
     config = function()
       require('config.gitsigns')
+    end,
+  }
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('config.lualine')
     end,
   }
 
