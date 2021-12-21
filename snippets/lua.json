@@ -1,8 +1,14 @@
 {
-	"vim.api.nvim_": {
-		"prefix": "nv",
-		"body": [
-			"vim.api.nvim_"
-		]
-	}
+  "vim.api.nvim_": {
+    "prefix": "nv",
+    "body": [
+      "vim.api.nvim_"
+    ]
+  },
+  "use": {
+    "prefix": "use",
+    "body": [
+      "use {'$0'}"
+    ]
+  }
 }
