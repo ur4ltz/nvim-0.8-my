@@ -82,13 +82,6 @@ packer.startup(function()
   }
 
   use {
-    'stevearc/aerial.nvim',
-    config = function()
-      require('config.aerial')
-    end,
-  }
-
-  use {
     'ldelossa/calltree.nvim',
     config = function ()
       require('config.calltree')

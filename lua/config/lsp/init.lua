@@ -1,7 +1,6 @@
 -- vim: ts=2 sw=2 et
 
 local nvim_lsp = require('lspconfig')
-local aerial = require('aerial')
 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
   vim.lsp.handlers.signature_help, {
@@ -24,9 +23,6 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 ---@param _ any
 ---@param bufnr any
 local custom_attach = function(_, bufnr)
-  require('aerial').register_attach_cb(function(bufnr)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>a', '<cmd>AerialToggle!<CR>', {})
-  end)
 
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
