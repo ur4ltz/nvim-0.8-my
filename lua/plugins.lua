@@ -1,5 +1,7 @@
 -- vim: ts=2 sw=2 et:
 
+require('impatient').enable_profile()
+
 local function install_packer()
   -- local fn = vim.fn
   local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
@@ -27,6 +29,8 @@ packer.init {
 
 packer.startup(function()
   use {'wbthomason/packer.nvim', opt = true}
+
+  use {'lewis6991/impatient.nvim'}
 
   use {
     'ellisonleao/gruvbox.nvim',
