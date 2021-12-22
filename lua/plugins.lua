@@ -131,6 +131,16 @@ packer.startup(function()
   }
 
   use {
+    'sindrets/diffview.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('config.diffview')
+    end,
+  }
+
+  use {
     'nvim-lualine/lualine.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
