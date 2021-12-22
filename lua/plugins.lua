@@ -176,6 +176,8 @@ packer.startup(function()
     end,
   }
 
+  use {'vifm/vifm.vim'}
+
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
