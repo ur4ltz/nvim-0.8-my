@@ -1,4 +1,4 @@
-require('calltree').setup({
+require('litee').setup({
   icons = 'nerd',
   layout = 'left',
   resolve_symbols = true,

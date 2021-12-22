@@ -82,15 +82,22 @@ packer.startup(function()
   }
 
   use {
-    'ldelossa/calltree.nvim',
+    'ldelossa/litee.nvim',
     config = function ()
-      require('config.calltree')
+      require('config.litee')
     end
   }
 
   use {'L3MON4D3/LuaSnip'}
 
   -- use {'rafamadriz/friendly-snippets'}
+
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('config.auto-pairs')
+    end,
+  }
 
   use {
     'hrsh7th/nvim-cmp',
