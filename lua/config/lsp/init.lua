@@ -2,6 +2,17 @@
 
 local nvim_lsp = require('lspconfig')
 
+vim.diagnostic.config {
+  underline = true,
+  virtual_text = {
+    source = 'always',
+    spacing = 5,
+    prefix = ' ',
+  },
+  signs = true,
+  update_in_insert = false,
+}
+
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
   vim.lsp.handlers.signature_help, {
     border = 'rounded',
@@ -12,6 +23,35 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
   vim.lsp.handlers.hover, {
     border = 'rounded',
+  }
+)
+
+-- Define Signs For LSP
+vim.fn.sign_define('DiagnosticSignError', {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignError',
+    numhl  = 'LspDiagnosticsSignError'
+  }
+)
+
+vim.fn.sign_define('DiagnosticSignWarning', {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignWarning',
+    numhl  = 'LspDiagnosticsSignWarning'
+  }
+)
+
+vim.fn.sign_define('DiagnosticSignInformation', {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignInformation',
+    numhl  = 'LspDiagnosticsSignInformation'
+  }
+)
+
+vim.fn.sign_define('DiagnosticSignHint', {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignHint',
+    numhl  = 'LspDiagnosticsSignHint'
   }
 )
 
@@ -84,5 +124,15 @@ nvim_lsp.gopls.setup {
       staticcheck = true,
     },
   },
+}
+
+nvim_lsp.pylsp.setup {
+  on_attach = custom_attach,
+  capabilities = capabilities,
+}
+
+nvim_lsp.solargraph.setup {
+  on_attach = custom_attach,
+  capabilities = capabilities,
 }
 
