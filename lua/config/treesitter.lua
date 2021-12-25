@@ -14,6 +14,8 @@ require('nvim-treesitter.configs').setup {
     'perl',
     'python',
     'ruby',
+    'toml',
+    'yaml',
   },
   highlight = {
     enable = true,
