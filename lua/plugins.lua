@@ -86,6 +86,7 @@ packer.startup(function()
   }
 
   use {
+    disable = true,
     'ldelossa/litee.nvim',
     config = function ()
       require('config.litee')
