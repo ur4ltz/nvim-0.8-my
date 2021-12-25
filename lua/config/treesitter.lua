@@ -10,7 +10,10 @@ require('nvim-treesitter.configs').setup {
     'lua',
     'make',
     'markdown',
+    'pascal',
+    'perl',
     'python',
+    'ruby',
   },
   highlight = {
     enable = true,
