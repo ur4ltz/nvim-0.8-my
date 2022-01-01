@@ -98,6 +98,13 @@ packer.startup(function()
   -- use {'rafamadriz/friendly-snippets'}
 
   use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('config.comments')
+    end
+  }
+
+  use {
     'windwp/nvim-autopairs',
     config = function()
       require('config.auto-pairs')
