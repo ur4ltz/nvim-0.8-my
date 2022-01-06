@@ -195,6 +195,8 @@ packer.startup(function()
     requires = {
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-packer.nvim',
+      'nvim-telescope/telescope-project.nvim',
     },
     config = function()
       require('config.telescope')
