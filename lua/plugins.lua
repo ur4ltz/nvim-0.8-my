@@ -32,10 +32,7 @@ packer.startup(function()
 
   use {'lewis6991/impatient.nvim'}
 
-  use {
-    'ellisonleao/gruvbox.nvim',
-    requires = {'rktjmp/lush.nvim'},
-  }
+  use {'ellisonleao/gruvbox.nvim'}
 
   use {'kyazdani42/nvim-web-devicons'}
 
