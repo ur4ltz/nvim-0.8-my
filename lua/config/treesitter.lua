@@ -2,8 +2,11 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = {
     'bash',
     'c',
+    'comment',
     'cpp',
+    'css',
     'go',
+    'html',
     'json',
     'json5',
     'jsonc',
@@ -13,8 +16,12 @@ require('nvim-treesitter.configs').setup {
     'pascal',
     'perl',
     'python',
+    'query',
+    'regex',
     'ruby',
+    'rust',
     'toml',
+    'vim',
     'yaml',
   },
   highlight = {
@@ -32,6 +39,7 @@ require('nvim-treesitter.configs').setup {
   rainbow = {
     enable = true,
     extended_mode = true,
+    max_file_lines = nil,
   },
   query_linter = {
     enable = true,
