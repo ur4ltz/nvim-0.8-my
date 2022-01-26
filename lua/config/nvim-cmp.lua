@@ -9,9 +9,10 @@ end
 --   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 -- end
 
-local cmp     = require('cmp')
-local lspkind = require('lspkind')
-local luasnip = require('luasnip')
+local cmp        = require('cmp')
+local cmp_buffer = require('cmp_buffer')
+local lspkind    = require('lspkind')
+local luasnip    = require('luasnip')
 
 cmp.setup {
   snippet = {
@@ -56,8 +57,25 @@ cmp.setup {
     {name = 'nvim_lsp'},
     {name = 'nvim_lua'},
     {name = 'luasnip'},
-    {name = 'buffer'},
+    {
+      name = 'buffer',
+      option = {
+        keyword_length = 3,             -- Default 3
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end,
+        indexing_interval       = 100,  -- Default 100
+        indexing_batch_size     = 1000, -- Default 1000
+        max_indexed_line_lenght = 40960 -- Default (1024 * 40) (40 Kilobytes)
+      },
+    },
     {name = 'path'},
+    {name = 'calc'},
+  },
+  sorting = {
+    comparators = {
+      function(...) return cmp_buffer:compare_locality(...) end,
+    },
   },
   documentation = {
     border = 'rounded',
@@ -69,9 +87,26 @@ cmp.setup {
       luasnip  = '[Snippet]',
       buffer   = '[Buffer]',
       path     = '[Path]',
+      calc     = '[Calc]',
     })}),
   },
 }
+
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
 
 require('luasnip.loaders.from_vscode').load({paths = './snippets'})
 
