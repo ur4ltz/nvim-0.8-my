@@ -59,6 +59,13 @@ packer.startup(function()
   }
 
   use {
+    'stevearc/dressing.nvim',
+    config = function()
+      require('config.dressing')
+    end
+  }
+
+  use {
     'goolord/alpha-nvim',
     requires = {'kyazdani42/nvim-web-devicons'},
     config = function()
