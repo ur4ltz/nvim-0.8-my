@@ -71,6 +71,7 @@ cmp.setup {
     },
     {name = 'path'},
     {name = 'calc'},
+    {name = 'cmp_git'},
   },
   sorting = {
     comparators = {
@@ -88,6 +89,7 @@ cmp.setup {
       buffer   = '[Buffer]',
       path     = '[Path]',
       calc     = '[Calc]',
+      cmp_git  = '[Git]',
     })}),
   },
 }
