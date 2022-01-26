@@ -34,6 +34,13 @@ packer.startup(function()
 
   use {'ellisonleao/gruvbox.nvim'}
 
+  use {
+    'navarasu/onedark.nvim',
+    -- config = function()
+    --   require('config.onedark')
+    -- end,
+  }
+
   use {'kyazdani42/nvim-web-devicons'}
 
   use {'onsails/lspkind-nvim'}
