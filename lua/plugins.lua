@@ -46,6 +46,19 @@ packer.startup(function()
   use {'onsails/lspkind-nvim'}
 
   use {
+    'MunifTanjim/exrc.nvim',
+    config = function()
+      require('exrc').setup({
+        files = {
+          '.nvimrc.lua',
+          '.nvimrc',
+          '.exrc',
+        },
+      })
+    end,
+  }
+
+  use {
     'goolord/alpha-nvim',
     requires = {'kyazdani42/nvim-web-devicons'},
     config = function()
