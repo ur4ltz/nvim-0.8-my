@@ -90,6 +90,20 @@ packer.startup(function()
   }
 
   use {
+    -- disable = true,
+    'nvim-neo-tree/neo-tree.nvim',
+    -- branch = 'v1.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons',
+      'MunifTanjim/nui.nvim'
+    },
+    config = function()
+      require('config.neo-tree')
+    end,
+  }
+
+  use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     requires = {
