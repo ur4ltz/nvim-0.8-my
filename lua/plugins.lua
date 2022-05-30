@@ -268,6 +268,15 @@ packer.startup(function()
   }
 
   use {
+    -- disable = true,
+    'folke/todo-comments.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
+    config = function()
+      require('config.todo-comments')
+    end,
+  }
+
+  use {
     'folke/which-key.nvim',
     config = function()
       require('config.whichkey')
