@@ -48,6 +48,9 @@ require('dressing').setup({
     -- Priority list of preferred vim.select implementations
     backend = { "telescope", "fzf_lua", "fzf", "builtin", "nui" },
 
+    -- Trim trailing `:` from prompt
+    trim_prompt = true,
+
     -- Options for telescope selector
     -- These are passed into the telescope picker directly. Can be used like:
     -- telescope = require('telescope.themes').get_ivy({...})
@@ -77,8 +80,17 @@ require('dressing').setup({
       border = {
         style = "rounded",
       },
+      buf_options = {
+        swapfile = false,
+        filetype = "DressingSelect",
+      },
+      win_options = {
+        winblend = 10,
+      },
       max_width = 80,
       max_height = 40,
+      min_width = 40,
+      min_height = 10,
     },
 
     -- Options for built-in selector
