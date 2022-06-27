@@ -1,7 +1,5 @@
 -- vim: ts=2 sw=2 et:
 
-require('impatient').enable_profile()
-
 local function install_packer()
   -- local fn = vim.fn
   local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
