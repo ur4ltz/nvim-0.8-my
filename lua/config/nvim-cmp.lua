@@ -94,6 +94,14 @@ cmp.setup {
   },
 }
 
+cmp.setup.filetype('gitcommit', {
+  sources = cmp.config.sources({
+    {name = 'git'},
+  }, {
+    {name = 'buffer'},
+  })
+})
+
 local search_source = {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({

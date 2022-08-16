@@ -150,14 +150,6 @@ packer.startup(function()
   }
 
   use {
-    'petertriho/cmp-git',
-    requires = {'nvim-lua/plenary.nvim'},
-    config = function()
-      require('cmp_git').setup()
-    end,
-  }
-
-  use {
     'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-nvim-lsp',
@@ -170,6 +162,13 @@ packer.startup(function()
       -- 'hrsh7th/vim-vsnip',
       'saadparwaiz1/cmp_luasnip',
       'petertriho/cmp-git',
+      {
+        'petertriho/cmp-git',
+        requires = {'nvim-lua/plenary.nvim'},
+        config = function()
+          require('cmp_git').setup({filetypes = {'gitcommit', 'NeogitCommitMessage'}})
+        end,
+      },
     },
     config = function()
       require('config.nvim-cmp')
