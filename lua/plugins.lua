@@ -206,12 +206,22 @@ packer.startup(function()
   }
 
   use {
+    disable = true,
     'nvim-lualine/lualine.nvim',
     requires = {
       'kyazdani42/nvim-web-devicons'
     },
     config = function()
       require('config.lualine')
+    end,
+  }
+
+  use {
+    'feline-nvim/feline.nvim',
+    config = function()
+      -- require('config.feline')
+      require('feline').setup()
+      require('feline').winbar.setup()
     end,
   }
 
