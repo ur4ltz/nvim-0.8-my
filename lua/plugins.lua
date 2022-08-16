@@ -134,7 +134,12 @@ packer.startup(function()
     end
   }
 
-  use {'L3MON4D3/LuaSnip'}
+  use {
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require('config.snippets')
+    end,
+  }
 
   -- use {'rafamadriz/friendly-snippets'}
 
