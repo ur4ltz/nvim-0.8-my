@@ -30,19 +30,6 @@ packer.startup(function()
 
   use {'lewis6991/impatient.nvim'}
 
-  use {'ellisonleao/gruvbox.nvim'}
-
-  use {
-    'navarasu/onedark.nvim',
-    -- config = function()
-    --   require('config.onedark')
-    -- end,
-  }
-
-  use {'kyazdani42/nvim-web-devicons'}
-
-  use {'onsails/lspkind-nvim'}
-
   use {
     'MunifTanjim/exrc.nvim',
     config = function()
@@ -55,6 +42,16 @@ packer.startup(function()
       })
     end,
   }
+
+  use {'ellisonleao/gruvbox.nvim'}
+
+  use {'projekt0n/github-nvim-theme'}
+
+  use {'navarasu/onedark.nvim'}
+
+  use {'kyazdani42/nvim-web-devicons'}
+
+  use {'onsails/lspkind-nvim'}
 
   use {
     'stevearc/dressing.nvim',
