@@ -94,19 +94,27 @@ cmp.setup {
   },
 }
 
+local search_source = {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    {name = 'nvim_lsp_document_symbol'} -- trigger by "/@"
+  }, {
+    {name = 'buffer', keyword_length = 3}
+  })
+}
+
 -- `/` cmdline setup.
-cmp.setup.cmdline('/', {
-  sources = {
-    { name = 'buffer' }
-  }
-})
+cmp.setup.cmdline('/', search_source)
+cmp.setup.cmdline('?', search_source)
 
 -- `:` cmdline setup.
 cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
+    {name = 'cmdline', group_index = 1},
   }, {
-    { name = 'cmdline' }
-  })
+    {name = 'nvim_lua'},
+    {name = 'cmdline_history', group_index = 2},
+  }),
 })
 
