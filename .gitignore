@@ -1,4 +1,15 @@
+# Temporary
+*~
+
+# Auto-generated tag files
+tags
+
+# Persistent undo
+[._]*.un~
+
+# My
 temp/
 test*.*
+
 # packer.nvim
 plugin/packer_compiled.lua
