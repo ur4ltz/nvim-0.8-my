@@ -1,9 +1,7 @@
 require('impatient').enable_profile()
 
+require('core')
 require('plugins')
-require('options')
-require('keymaps')
--- require('themes.onedark')
 require('themes.gruvbox')
 -- require('themes.onedark')
 -- require('themes.github')
