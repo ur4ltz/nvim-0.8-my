@@ -127,14 +127,6 @@ packer.startup(function()
   }
 
   use {
-    disable = true,
-    'ldelossa/litee.nvim',
-    config = function ()
-      require('config.litee')
-    end
-  }
-
-  use {
     'L3MON4D3/LuaSnip',
     config = function()
       require('config.snippets')
