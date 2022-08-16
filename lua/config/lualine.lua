@@ -19,7 +19,8 @@ local diagnostics = {
   'diagnostics',
   sources = {'nvim_diagnostic'},
   -- sections = {'error', 'warn'},
-  symbols = { error = " ", warn = " " },
+  symbols = { error = " ", warn = " ", info = " " },
+  colored = true,
   update_in_insert = false,
   cond = hide_in_width(80)
 }
@@ -71,12 +72,14 @@ require('lualine').setup {
     -- component_separators = { left = '', right = ''}
     section_separators = {left = '', right = ''},
     component_separators = {left = '|', right = '|'},
+    disabled_filetypes = {'neo-tree', 'symbols-outline', 'toggleterm'},     -- Filetypes to disable lualine for.
+    globalstatus = true,
   },
   sections = {
     lualine_a = {'mode'},
     lualine_b = {branch, 'filename'},
     lualine_c = {active_lsp, diagnostics, gps_comp},
-    lualine_x = {diff, filetype},
+    lualine_x = {diff, filetype, 'fileformat' },
     lualine_y = {location},
     lualine_z = {progress}
   },
