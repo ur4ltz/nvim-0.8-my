@@ -119,6 +119,16 @@ packer.startup(function()
 
   use {'weilbith/nvim-code-action-menu'}
 
+  use {
+    'simrat39/symbols-outline.nvim',
+    -- 'zeertzjq/symbols-outline.nvim',
+    -- branch = 'patch-1',
+    cmd = 'SymbolsOutline',
+    config = function()
+      require('symbols-outline').setup()
+    end,
+  }
+
   use {'ray-x/lsp_signature.nvim'}
 
   use {
