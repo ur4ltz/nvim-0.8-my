@@ -19,18 +19,27 @@ packer.init {
   max_jobs = 2,
   display = {
     open_cmd = 'topleft 80vnew [packer]',
+    title = 'Packer',
+    done_sym = '',
+    error_sym = '×',
+    prompt_border = 'rounded',
+    keybindings = {
+      toggle_info = '<Tab>',
+      -- diff = '<cr>',
+    },
   },
   git = {
     clone_timeout = 360,
   },
 }
 
-packer.startup(function()
+packer.startup(function(use)
   use {'wbthomason/packer.nvim', opt = true}
 
   use {'lewis6991/impatient.nvim'}
 
   use {
+    disable = true,
     'MunifTanjim/exrc.nvim',
     config = function()
       require('exrc').setup({
@@ -57,12 +66,14 @@ packer.startup(function()
     'stevearc/dressing.nvim',
     config = function()
       require('config.dressing')
-    end
+    end,
   }
 
   use {
     'goolord/alpha-nvim',
-    requires = {'kyazdani42/nvim-web-devicons'},
+    requires = {
+      'kyazdani42/nvim-web-devicons'
+    },
     config = function()
       require('config.alpha')
     end,
@@ -87,7 +98,7 @@ packer.startup(function()
   use {
     -- disable = true,
     'nvim-neo-tree/neo-tree.nvim',
-    -- branch = 'v1.x',
+    branch = 'v2.x',
     requires = {
       'nvim-lua/plenary.nvim',
       'kyazdani42/nvim-web-devicons',
@@ -151,7 +162,7 @@ packer.startup(function()
     'numToStr/Comment.nvim',
     config = function()
       require('config.comments')
-    end
+    end,
   }
 
   use {
@@ -187,6 +198,9 @@ packer.startup(function()
 
   use {
     'rafcamlet/nvim-luapad',
+    requires = {
+      'antoinemadec/FixCursorHold.nvim'
+    },
     ft = 'lua',
     config = function()
       require('config.luapad')
@@ -202,6 +216,9 @@ packer.startup(function()
 
   use {
     'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
     config = function()
       require('config.gitsigns')
     end,
@@ -332,7 +349,9 @@ packer.startup(function()
 
   use {
     'folke/trouble.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'},
+    requires = {
+      'kyazdani42/nvim-web-devicons'
+    },
     config = function()
       require('config.trouble')
     end,
@@ -341,7 +360,9 @@ packer.startup(function()
   use {
     -- disable = true,
     'folke/todo-comments.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
     config = function()
       require('config.todo-comments')
     end,
