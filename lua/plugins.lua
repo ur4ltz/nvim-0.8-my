@@ -267,6 +267,14 @@ packer.startup(function(use)
   }
 
   use {
+    disable = true,
+    'rebelot/heirline.nvim',
+    config = function()
+      require('config.heirline')
+    end,
+  }
+
+  use {
     'rmagatti/auto-session',
     config = function()
       require('config.auto-session')
