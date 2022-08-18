@@ -385,4 +385,6 @@ packer.startup(function()
     end,
   }
 
+  use {'junegunn/vim-easy-align', opt = true, cmd = 'EasyAlign'}
+
 end)
