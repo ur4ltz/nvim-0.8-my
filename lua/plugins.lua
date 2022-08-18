@@ -288,6 +288,7 @@ packer.startup(function()
       'nvim-telescope/telescope-packer.nvim',
       'nvim-telescope/telescope-project.nvim',
       'nvim-telescope/telescope-file-browser.nvim',
+      'nvim-telescope/telescope-symbols.nvim',
       'benfowler/telescope-luasnip.nvim',
       'LinArcX/telescope-env.nvim',
     },
