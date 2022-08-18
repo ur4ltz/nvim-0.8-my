@@ -24,6 +24,7 @@ local mappings = {
   t = {
     name = 'Telescope',
     b = {'<cmd>Telescope buffers<cr>',    'Buffers'},
+    c = {'<cmd>Telescope neoclip<cr>',    'Clipboard'},
     f = {'<cmd>Telescope find_files<cr>', 'Find files'},
     g = {'<cmd>Telescope git_files<cr>',  'Git files'},
     h = {'<cmd>Telescope help_tags<cr>',  'Help tags'},

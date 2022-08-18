@@ -262,6 +262,17 @@ packer.startup(function()
   }
 
   use {
+    'AckslD/nvim-neoclip.lua',
+    requires = {
+      {'kkharji/sqlite.lua', module = 'sqlite'},
+      {'nvim-telescope/telescope.nvim'},
+    },
+    config = function()
+      require('config.neoclip')
+    end,
+  }
+
+  use {
     'norcalli/nvim-colorizer.lua',
     config = function()
       require('config.colorizer')
