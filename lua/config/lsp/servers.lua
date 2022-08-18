@@ -71,19 +71,41 @@ end
 local sumneko_root_path = vim.fn.expand('$HOME/github/lua-language-server')
 local sumneko_binary = sumneko_root_path..'/bin/lua-language-server'
 
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, 'lua/?.lua')
-table.insert(runtime_path, 'lua/?/init.lua')
-
 nvim_lsp.sumneko_lua.setup {
   cmd = {sumneko_binary},
   on_attach = custom_attach,
+
+  on_init = function(client)
+
+    local path = client.workspace_folders[1].name
+    -- TODO: Delete next
+    print('Client workspace folders: ', path)
+
+    if path == vim.fn.expand('$HOME/.config/nvim') then
+
+      local runtime_path = vim.split(package.path, ';')
+      table.insert(runtime_path, 'lua/?.lua')
+      table.insert(runtime_path, 'lua/?/init.lua')
+
+      client.config.settings.Lua = {
+        runtime = {
+          path = runtime_path
+        },
+        workspace = {
+          library = vim.api.nvim_get_runtime_file('', true)
+        },
+      }
+    end
+    return true
+  end,
+
   capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
         version = 'LuaJIT',
-        path = runtime_path,
+        fileEncoding = 'utf8',
+        unicodeName = true,
       },
       completion = {
         callSnippet = 'Replace',
@@ -93,7 +115,6 @@ nvim_lsp.sumneko_lua.setup {
         globals = {'vim', 'use'},
       },
       workspace = {
-        library = vim.api.nvim_get_runtime_file('', true),
         maxPreload = 10000,
         preloadFileSize = 10000,
       },
