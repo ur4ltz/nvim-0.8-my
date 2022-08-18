@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "completion": {
+    "autoRequire": false
+  },
+  "diagnostics": {
+    "globals": [
+      "vim",
+      "use"
+    ]
+  },
+  "workspace": {
+    "ignoreDir": [
+      ".git",
+      ".github"
+    ],
+    "checkThirdParty": false
+  }
+}
