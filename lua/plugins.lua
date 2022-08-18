@@ -318,4 +318,14 @@ packer.startup(function()
     end,
   }
 
+  use {
+    'ibhagwan/fzf-lua',
+    requires  = {
+      'kyazdani42/nvim-web-devicons'
+    },
+    config = function()
+      require('config.fzf')
+    end,
+  }
+
 end)
