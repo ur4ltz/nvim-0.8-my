@@ -28,5 +28,6 @@ telescope.load_extension('packer')
 telescope.load_extension('project')
 telescope.load_extension('session-lens')
 telescope.load_extension('env')
+telescope.load_extension('luasnip')
 
 -- vim: ts=2 sw=2 et:
