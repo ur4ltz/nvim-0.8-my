@@ -255,6 +255,7 @@ packer.startup(function()
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-packer.nvim',
       'nvim-telescope/telescope-project.nvim',
+      'LinArcX/telescope-env.nvim',
     },
     config = function()
       require('config.telescope')

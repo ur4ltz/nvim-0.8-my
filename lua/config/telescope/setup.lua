@@ -26,5 +26,6 @@ telescope.setup{
 
 telescope.load_extension('packer')
 telescope.load_extension('project')
+telescope.load_extension('env')
 
 -- vim: ts=2 sw=2 et:
