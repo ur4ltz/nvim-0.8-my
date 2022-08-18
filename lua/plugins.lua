@@ -437,6 +437,7 @@ packer.startup(function(use)
     end,
   }
 
+  use {
     'ibhagwan/fzf-lua',
     requires  = {
       'kyazdani42/nvim-web-devicons'
