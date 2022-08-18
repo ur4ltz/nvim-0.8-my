@@ -113,13 +113,6 @@ nvim_lsp.gopls.setup {
       staticcheck = true,
     },
   },
-  max_line_len = 120,
-  tag_transform = false,
-  test_dir = '',
-  lsp_cfg = true,
-  lsp_gofumpt = true,
-  lsp_on_attach = true,
-  dap_debug = true,
 }
 
 nvim_lsp.pylsp.setup {
