@@ -345,4 +345,15 @@ packer.startup(function()
     end,
   }
 
+  use {
+    'nvim-neorg/neorg',
+    requires = {
+      'nvim-neorg/neorg-telescope',
+      'danymat/neorg-gtd-things',
+    },
+    config = function ()
+      require('config.neorg')
+    end,
+  }
+
 end)
