@@ -234,8 +234,16 @@ packer.startup(function()
 
   use {
     'rmagatti/session-lens',
+    requires = {
+      'rmagatti/auto-session',
+      'nvim-telescope/telescope.nvim'
+    },
     config = function()
-      require('session-lens').setup()
+      require('session-lens').setup {
+        path_display = {'shorten'},
+        theme_conf = {border = true},
+        previewer = true,
+      }
     end,
   }
 
