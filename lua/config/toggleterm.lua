@@ -14,3 +14,16 @@ require('toggleterm').setup {
     end
   end,
 }
+
+local Terminal = require('toggleterm.terminal').Terminal
+
+local tig = Terminal:new({cmd = 'tig', hidden = true})
+function _TIG_TOGGLE()
+  tig:toggle()
+end
+
+local vifm = Terminal:new({cmd = 'vifm', hidden = true})
+function _VIFM_TOGGLE()
+  vifm:toggle()
+end
+
