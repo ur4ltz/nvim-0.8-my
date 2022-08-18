@@ -2,11 +2,12 @@
 
 vim.diagnostic.config {
   underline = true,
-  virtual_text = {
-    source = 'always',
-    spacing = 5,
-    prefix = ' ',
-  },
+  -- virtual_text = {
+  --   source = 'always',
+  --   spacing = 5,
+  --   prefix = ' ',
+  -- },
+  virtual_text = false,
   signs = true,
   update_in_insert = false,
 }
@@ -32,17 +33,17 @@ vim.fn.sign_define('DiagnosticSignError', {
   }
 )
 
-vim.fn.sign_define('DiagnosticSignWarning', {
+vim.fn.sign_define('DiagnosticSignWarn', {
     text   = ' ',
-    texthl = 'DiagnosticsSignWarning',
-    numhl  = 'DiagnosticsSignWarning'
+    texthl = 'DiagnosticsSignWarn',
+    numhl  = 'DiagnosticsSignWarn'
   }
 )
 
-vim.fn.sign_define('DiagnosticSignInformation', {
+vim.fn.sign_define('DiagnosticSignInfo', {
     text   = ' ',
-    texthl = 'DiagnosticsSignInformation',
-    numhl  = 'DiagnosticsSignInformation'
+    texthl = 'DiagnosticsSignInfo',
+    numhl  = 'DiagnosticsSignInfo'
   }
 )
 
