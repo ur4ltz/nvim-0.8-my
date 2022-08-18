@@ -3,7 +3,7 @@ require('Comment').setup {
 
   post_hook = nil,
 
-  ignore = nil,
+  ignore = '^$',
 }
 
 local comment_ft = require('Comment.ft')
