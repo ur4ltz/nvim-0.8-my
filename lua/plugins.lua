@@ -280,6 +280,21 @@ packer.startup(function()
   }
 
   use {
+    'https://gitlab.com/yorickpeterse/nvim-pqf',
+    config = function()
+      require('pqf').setup()
+    end,
+  }
+
+  use {
+    'kevinhwang91/nvim-bqf',
+    ft = 'qf',
+    config = function()
+      require('config.bqf')
+    end,
+  }
+
+  use {
     'folke/trouble.nvim',
     requires = {'kyazdani42/nvim-web-devicons'},
     config = function()
