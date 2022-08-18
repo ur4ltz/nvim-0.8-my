@@ -356,4 +356,11 @@ packer.startup(function()
     end,
   }
 
+  use {
+    'nvim-orgmode/orgmode',
+    config = function()
+      require('config.orgmode')
+    end,
+  }
+
 end)
