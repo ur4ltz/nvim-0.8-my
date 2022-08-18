@@ -140,6 +140,15 @@ packer.startup(function(use)
     end,
   }
 
+  use {
+    -- disable = true,
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
+    -- config = function()
+    --   require('config.lsp.null-ls')
+    -- end,
+  }
+
   use {'ray-x/lsp_signature.nvim'}
 
   use {
