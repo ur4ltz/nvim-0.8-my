@@ -176,18 +176,30 @@ packer.startup(function(use)
     'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-nvim-lsp',
+      -- 'hrsh7th/cmp-nvim-lsp-signature-help',
+      'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lua',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-calc',
       'hrsh7th/cmp-cmdline',
       'saadparwaiz1/cmp_luasnip',
-      'petertriho/cmp-git',
+      'delphinus/cmp-ctags',
+      'dmitmel/cmp-cmdline-history',
       {
         'petertriho/cmp-git',
         requires = {'nvim-lua/plenary.nvim'},
         config = function()
           require('cmp_git').setup({filetypes = {'gitcommit', 'NeogitCommitMessage'}})
+        end,
+      },
+      {
+        'tamago324/cmp-zsh',
+        config = function()
+          require('cmp_zsh').setup {
+            zshrc = true,
+            filetype = {'zsh'},
+          }
         end,
       },
     },
