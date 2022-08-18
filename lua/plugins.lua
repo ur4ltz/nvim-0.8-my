@@ -117,6 +117,8 @@ packer.startup(function()
     end,
   }
 
+  use {'weilbith/nvim-code-action-menu'}
+
   use {'ray-x/lsp_signature.nvim'}
 
   use {
