@@ -329,6 +329,13 @@ packer.startup(function()
   }
 
   use {
+  use {
+    'rcarriga/nvim-notify',
+    config = function()
+      require('config.nvim-notify')
+    end,
+  }
+
     'ibhagwan/fzf-lua',
     requires  = {
       'kyazdani42/nvim-web-devicons'

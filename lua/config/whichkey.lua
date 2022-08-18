@@ -31,6 +31,7 @@ local mappings = {
     h = {'<cmd>Telescope help_tags<cr>',  'Help tags'},
     l = {'<cmd>Telescope live_grep<cr>',  'Live grep'},
     r = {'<cmd>Telescope registers<cr>',  'Registers'},
+    n = {'<cmd>Telescope notify<cr>',     'Notify'},
     p = {'<cmd>Telescope packer<cr>',     'Packer'},
     P = {'<cmd>Telescope project<cr>',    'Projects'},
   },
