@@ -28,6 +28,7 @@ telescope.load_extension('packer')
 telescope.load_extension('project')
 telescope.load_extension('session-lens')
 telescope.load_extension('env')
+telescope.load_extension('file_browser')
 telescope.load_extension('luasnip')
 telescope.load_extension('notify')
 
