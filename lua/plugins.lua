@@ -346,6 +346,18 @@ packer.startup(function()
   }
 
   use {
+    'amrbashir/nvim-docs-view',
+    opt = true,
+    cmd = { 'DocsViewToggle' },
+    config = function()
+      require('docs-view').setup({
+        position = 'right',
+        width = 60,
+      })
+    end,
+  }
+
+  use {
     'nvim-neorg/neorg',
     requires = {
       'nvim-neorg/neorg-telescope',
