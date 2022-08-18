@@ -376,6 +376,9 @@ packer.startup(function(use)
   }
 
   use {
+  -- Translate engine
+  use {'potamides/pantran.nvim'}
+
   use {
     'rcarriga/nvim-notify',
     config = function()
