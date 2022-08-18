@@ -2,9 +2,12 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = {
     'bash',
     'c',
-    'comment',
+    'cmake',
+    'comment', -- Comment tags like TODO, FIXME, NOTE:  ...
+    'commonlisp',
     'cpp',
     'css',
+    'fennel',
     'go',
     'html',
     'json',
@@ -12,7 +15,9 @@ require('nvim-treesitter.configs').setup {
     'jsonc',
     'lua',
     'make',
-    'markdown',
+    'markdown_inline',
+    'ninja',
+    'norg',
     'pascal',
     'perl',
     'python',
@@ -20,6 +25,7 @@ require('nvim-treesitter.configs').setup {
     'regex',
     'ruby',
     'rust',
+    'todotxt',
     'toml',
     'vim',
     'yaml',
@@ -30,6 +36,9 @@ require('nvim-treesitter.configs').setup {
   },
   indent = {
     enable = true,
+    disable = {
+      'python'
+    },
   },
   playground = {
     enable = true,
@@ -44,7 +53,7 @@ require('nvim-treesitter.configs').setup {
   query_linter = {
     enable = true,
     use_virtual_text = true,
-    linter_events = {'BufWrite', 'CursorHold'},
+    linter_events = {'BufWrite', 'CursorHold', 'CursorMoved'},
   },
 }
 
