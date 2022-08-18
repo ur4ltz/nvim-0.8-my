@@ -132,3 +132,11 @@ nvim_lsp.solargraph.setup {
   capabilities = capabilities,
 }
 
+nvim_lsp.cmake.setup {
+  cmd = {'cmake-language-server'},
+  filetypes = {'cmake'},
+  capabilities = capabilities,
+  on_attach = custom_attach,
+  init_options = {buildDerectory = 'build'},
+}
+
