@@ -358,6 +358,16 @@ packer.startup(function()
   }
 
   use {
+    'danymat/neogen',
+    requires = {
+      'nvim-treesitter/nvim-treesitter'
+    },
+    config = function()
+      require('config.neogen')
+    end,
+  }
+
+  use {
     'nvim-neorg/neorg',
     requires = {
       'nvim-neorg/neorg-telescope',
