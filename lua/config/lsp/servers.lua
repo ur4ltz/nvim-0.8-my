@@ -24,7 +24,6 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 ---@param client any
 ---@param bufnr any
 local custom_attach = function(client, bufnr)
-  print('Attaching to: ' .. client.name)
 
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
