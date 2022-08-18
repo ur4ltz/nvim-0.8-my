@@ -457,6 +457,14 @@ packer.startup(function(use)
     end,
   }
 
+  use {
+    disable = true,
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup()
+    end,
+  }
+
   use {'junegunn/vim-easy-align', opt = true, cmd = 'EasyAlign'}
 
   use {'nanotee/luv-vimdocs'}
