@@ -497,8 +497,4 @@ packer.startup(function(use)
 
   use {'junegunn/vim-easy-align', opt = true, cmd = 'EasyAlign'}
 
-  use {'nanotee/luv-vimdocs'}
-
-  use {'milisims/nvim-luaref'}
-
 end)
