@@ -104,7 +104,6 @@ cmp.setup {
       cmp_ctags       = '[CTags]',
       zsh             = '[Z Shell]',
       cmdline         = '[CmdL]',
-      cmdline_history = '[CmdLH]'
     })}),
   },
 }
@@ -137,7 +136,7 @@ cmp.setup.cmdline(':', {
     {name = 'cmdline', group_index = 1},
   }, {
     {name = 'nvim_lua'},
-    {name = 'cmdline_history', group_index = 2},
+    {name = 'path'},
   }),
 })
 

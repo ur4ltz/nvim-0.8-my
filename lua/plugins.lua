@@ -194,7 +194,6 @@ packer.startup(function(use)
       'hrsh7th/cmp-cmdline',
       'saadparwaiz1/cmp_luasnip',
       'delphinus/cmp-ctags',
-      'dmitmel/cmp-cmdline-history',
       {
         'petertriho/cmp-git',
         requires = {'nvim-lua/plenary.nvim'},
